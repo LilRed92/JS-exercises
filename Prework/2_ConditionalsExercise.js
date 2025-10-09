@@ -55,7 +55,7 @@ function exercise1(num1) {
   // ------------------------------------------
   // Write your code for exercise 1 below here:
   // ------------------------------------------
-
+  answer1 = "num1 is small";
   // ------------------------------------------
   // And above here
   // ------------------------------------------
@@ -77,13 +77,16 @@ function exercise2(num2) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num2 % 2 === 0){
+    answer2 = num2 + ' is even';
+  } else {
+    answer2 =  num2 + ' is odd';
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
   return answer2;
 }
-
 // EXERCISE 3.
 // Write an if/else if/else block such that if `num3` is positive, then
 // answer3 is assigned the string value of:
@@ -98,7 +101,13 @@ function exercise3(num3) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (num3 > 0) {
+    answer3 = num3 + " is positive";
+  } else if (num3 < 0) {
+    answer3 = num3 + " is negative";
+  } else {
+    answer3 = num3 + " is zero";
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -116,7 +125,11 @@ function exercise4(varA, varB) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (varA == varB) {
+    answer4 = "varA and varB are equal";
+  } else {
+    answer4 = "varA and varB differ";
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -127,6 +140,10 @@ function exercise4(varA, varB) {
 // In exercise 4, what are some of the unexpected cases where `varA` and `varB`
 // seemed like they are equal, but would not pass the tests? In your analysis
 // consider other data types beside strings and variables.
+// There are a couple of instances in which one would believe varA and varB would
+// be equal, but aren't. One would be if different capitalization is used in two strings.
+// i.e. "Something" and "something". Another would be if one used a boolean and a string. 
+// If you set varA to true (boolean) and varB to "true" (string) they aren't considerd equal.
 
 // EXERCISE 6.
 // Here, assign the value of true to answer6 if:
@@ -137,7 +154,11 @@ function exercise6(varA, varB, varC) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (varA == varB && (varA || varB != varC)) {
+      answer6 = true;
+  } else {
+    answer6 = false;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -162,7 +183,22 @@ function exercise7(num7) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+switch (num7) {
+    case 1:
+      answer7 = "You won!";
+      break;
+    case 7:
+      answer7 = "You are lucky!";
+      break;
+    case 101:
+      answer7 = "Welcome to coding 101!";
+      break;
+    case 1000000:
+      answer7 = "You are one in a million!";
+      break;
+    default:
+      answer7 = "Thanks for that!";
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -179,7 +215,11 @@ function exercise8(amount1, amount2, minimum, maximum) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+if (amount1 > minimum && amount1 < maximum && amount2 > minimum && amount2 < maximum) {
+    answer8 = true;
+  } else {
+    answer8 = false;
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -198,7 +238,24 @@ function exercise9(item) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  if (Number.isInteger(item)) {
+    switch (item) {
+      case 1:
+        answer9 = "You won!";
+        break;
+      case 7:
+        answer9 = "You are lucky!";
+        break;
+      case 101:
+        answer9 = "Welcome to coding 101!";
+        break;
+      case 1000000:
+        answer9 = "You are one in a million!";
+        break;
+      }
+    } else {
+      answer9 = "Please send a number, that was a " + typeof(item) + ".";
+    }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -220,7 +277,17 @@ function exercise10(num10) {
   // --------------------------------------------
   // Write your code for the exercise below here:
   // --------------------------------------------
-
+  for (let i = 1; i <= num10; i++) {
+    if (i % 15 === 0) {
+      answer10 = "Fizz Buzz";
+    } else if (i % 3 === 0) {
+      answer10 = "Fizz";
+    } else if (i % 5 === 0) {
+      answer10 = "Buzz";
+    } else {
+      answer10 = num10;
+    }
+  }
   // --------------------------------------------
   // And above here
   // --------------------------------------------
@@ -230,6 +297,8 @@ function exercise10(num10) {
 // Congrats, you made it to the end! You rock!
 // Did you find this easy or hard? If you used references, which ones helped you?
 // Please answer in a comment below.
-//
+// Most of these excercises were easy for me. I did have to look back at some
+// previous work that I did with switch and Fizz Buzz to refresh my memory. 
+// Additionally, I did use MDN as a bit of a refresher as well.
 
 // Email your file to us or commit your file to GitHub and email us a link.
